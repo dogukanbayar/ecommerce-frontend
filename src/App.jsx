@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import PageContent from "./layout/PageContent";
+import HomePage from "./pages/HomePage";
+import ShopPage from "./pages/ShopPage";
+import ProductDetailPage from "./pages/ProductDetailPage";
 import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
-import ProductDetailPage from "./pages/ProductDetailPage";
-import ShopPage from "./pages/ShopPage";
 import { verifyTokenThunk } from "./store/actions/clientActions";
 
 export default function App() {
@@ -21,21 +21,17 @@ export default function App() {
 
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
-        <Header />
-        <ToastContainer position="top-right" autoClose={3000} />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Navigate to="/shop" replace />} />
-            <Route path="/shop" element={<ShopPage />} />
-            <Route path="/shop/:gender/:categoryName/:categoryId" element={<ShopPage />} />
-            <Route path="/signup" element={<SignUpPage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/product/:productId" element={<ProductDetailPage />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+      <ToastContainer position="top-right" autoClose={3000} />
+      <PageContent>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/shop" element={<ShopPage />} />
+          <Route path="/shop/:gender/:categoryName/:categoryId" element={<ShopPage />} />
+          <Route path="/product/:productId" element={<ProductDetailPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/login" element={<LoginPage />} />
+        </Routes>
+      </PageContent>
     </Router>
   );
 }
