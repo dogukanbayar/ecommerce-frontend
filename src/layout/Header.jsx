@@ -94,7 +94,7 @@ export default function Header() {
             <Link to="#" className="hover:text-[#23A6F0] transition">About</Link>
             <Link to="#" className="hover:text-[#23A6F0] transition">Blog</Link>
             <Link to="/contact" className="hover:text-[#23A6F0] transition">Contact</Link>
-            <Link to="#" className="hover:text-[#23A6F0] transition">Pages</Link>
+            <Link to="/team" className="hover:text-[#23A6F0] transition">Team</Link>
           </nav>
         </div>
 
@@ -163,7 +163,7 @@ export default function Header() {
           <Link to="#" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#23A6F0]">About</Link>
           <Link to="#" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#23A6F0]">Blog</Link>
           <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#23A6F0]">Contact</Link>
-          <Link to="#" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#23A6F0]">Pages</Link>
+          <Link to="/team" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#23A6F0]">Team</Link>
         </div>
       )}
     </header>
