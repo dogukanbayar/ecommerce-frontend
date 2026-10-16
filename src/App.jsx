@@ -8,6 +8,7 @@ import PageContent from "./layout/PageContent";
 import HomePage from "./pages/HomePage";
 import ShopPage from "./pages/ShopPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
+import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import TeamPage from "./pages/TeamPage";
 import SignUpPage from "./pages/SignUpPage";
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="/shop" element={<ShopPage />} />
           <Route path="/shop/:gender/:categoryName/:categoryId" element={<ShopPage />} />
           <Route path="/product/:productId" element={<ProductDetailPage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/signup" element={<SignUpPage />} />

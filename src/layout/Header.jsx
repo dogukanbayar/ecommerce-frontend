@@ -91,7 +91,7 @@ export default function Header() {
                 Shop <ChevronDown className="w-3.5 h-3.5" />
               </Link>
             </div>
-            <Link to="#" className="hover:text-[#23A6F0] transition">About</Link>
+            <Link to="/about" className="hover:text-[#23A6F0] transition">About</Link>
             <Link to="#" className="hover:text-[#23A6F0] transition">Blog</Link>
             <Link to="/contact" className="hover:text-[#23A6F0] transition">Contact</Link>
             <Link to="/team" className="hover:text-[#23A6F0] transition">Team</Link>
@@ -160,7 +160,7 @@ export default function Header() {
         <div className="md:hidden flex flex-col items-center gap-5 py-8 bg-white border-t border-gray-100 text-lg font-bold text-[#737373]">
           <Link to="/" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#23A6F0]">Home</Link>
           <Link to="/shop" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#23A6F0]">Shop</Link>
-          <Link to="#" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#23A6F0]">About</Link>
+          <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#23A6F0]">About</Link>
           <Link to="#" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#23A6F0]">Blog</Link>
           <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#23A6F0]">Contact</Link>
           <Link to="/team" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#23A6F0]">Team</Link>
