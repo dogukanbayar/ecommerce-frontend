@@ -5,27 +5,34 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
+import ProductDetailPage from "./pages/ProductDetailPage";
 import { verifyTokenThunk } from "./store/actions/clientActions";
 
 export default function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // T11: Uygulama baslangicinda otomatik giris dogrulamasi
     dispatch(verifyTokenThunk());
   }, [dispatch]);
 
   return (
     <Router>
-      <Header />
-      <ToastContainer position="top-right" autoClose={3000} />
-      <Routes>
-        <Route path="/" element={<Navigate to="/login" replace />} />
-        <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/login" element={<LoginPage />} />
-      </Routes>
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <ToastContainer position="top-right" autoClose={3000} />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Navigate to="/product/1" replace />} />
+            <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/product/:productId" element={<ProductDetailPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
 }
